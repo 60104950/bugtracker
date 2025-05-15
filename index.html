@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bug Tracker</title>
+  <style>
+    body { font-family: sans-serif; padding: 1rem; }
+    form, .filters, .bug-list { margin-bottom: 1rem; }
+    .bug { border: 1px solid #ccc; padding: 0.5rem; margin-bottom: 0.5rem; }
+    select, input, textarea { margin-top: 5px; display: block; width: 100%; }
+    button { margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Bug Tracker</h1>
+
+  <form id="bugForm">
+    <h2>Add Bug</h2>
+    <label>Title: <input type="text" id="title" required></label>
+    <label>Description: <textarea id="description" required></textarea></label>
+    <label>Severity:
+      <select id="severity">
+        <option>low</option>
+        <option>medium</option>
+        <option>high</option>
+      </select>
+    </label>
+    <label>Status:
+      <select id="status">
+        <option>open</option>
+        <option>in progress</option>
+        <option>resolved</option>
+      </select>
+    </label>
+    <button type="submit">Add Bug</button>
+  </form>
+
+  <div class="filters">
+    <h2>Filter</h2>
+    <label>Severity:
+      <select id="filterSeverity">
+        <option value="">All</option>
+        <option>low</option>
+        <option>medium</option>
+        <option>high</option>
+      </select>
+    </label>
+    <label>Status:
+      <select id="filterStatus">
+        <option value="">All</option>
+        <option>open</option>
+        <option>in progress</option>
+        <option>resolved</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="bug-list" id="bugList">
+    <h2>All Bugs</h2>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
